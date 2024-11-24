@@ -1,0 +1,76 @@
+-- Drop the Hoteldb database if it exists
+DROP DATABASE IF EXISTS Hoteldb;
+
+-- Create the Hoteldb database
+CREATE DATABASE Hoteldb;
+
+-- Use the Hoteldb database
+USE Hoteldb;
+
+-- Create the Customer_Details table
+CREATE TABLE Customer_Details (
+    Customer_Number INT PRIMARY KEY AUTO_INCREMENT,
+    First_Name VARCHAR(50),
+    Last_Name VARCHAR(50),
+    Date_of_Birth DATE,
+    Address1 VARCHAR(100),
+    Address2 VARCHAR(100),
+    City VARCHAR(50),
+    Pin_Code VARCHAR(10),
+    Contact_Number VARCHAR(15),
+    Date_Created DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create the Room_Type table
+CREATE TABLE Room_Type (
+    Room_Type_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Room_Type_Name VARCHAR(50),
+    Rate DECIMAL(10, 2)
+);
+
+-- Create the Reservation table
+CREATE TABLE Reservation (
+    Reservation_Number INT PRIMARY KEY AUTO_INCREMENT,
+    Customer_Number INT,
+    Room_Type_ID INT,
+    Booking_Type VARCHAR(20),
+    From_Date DATE,
+    To_Date DATE,
+    Number_of_People INT,
+    Rate DECIMAL(10, 2),
+    Date_Created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (Customer_Number) REFERENCES Customer_Details(Customer_Number) ON DELETE CASCADE, -- Add ON DELETE CASCADE
+    FOREIGN KEY (Room_Type_ID) REFERENCES Room_Type(Room_Type_ID)
+);
+
+
+-- Insert data into Customer_Details table
+INSERT INTO Customer_Details (First_Name, Last_Name, Date_of_Birth, Address1, City, Pin_Code, Contact_Number)
+VALUES ('John', 'Doe', '1990-05-15', '123 Main St', 'New York', '10001', '1234567890');
+
+INSERT INTO Customer_Details (First_Name, Last_Name, Date_of_Birth, Address1, City, Pin_Code, Contact_Number)
+VALUES ('Jane', 'Smith', '1985-09-20', '456 Elm St', 'Los Angeles', '90001', '9876543210');
+
+-- Insert data into Room_Type table
+INSERT INTO Room_Type (Room_Type_Name, Rate)
+VALUES ('Single', 2500.00);
+
+INSERT INTO Room_Type (Room_Type_Name, Rate)
+VALUES ('Deluxe', 3500.00);
+
+INSERT INTO Room_Type (Room_Type_Name, Rate)
+VALUES ('Standard', 100.00);
+
+INSERT INTO Room_Type (Room_Type_Name, Rate)
+VALUES ('Bridal Suite', 5000.00);
+
+-- Insert data into Reservation table (example)
+INSERT INTO Reservation (Customer_Number, Room_Type_ID, Booking_Type, From_Date, To_Date, Number_of_People, Rate)
+VALUES (1, 3, 'Standard', '2024-06-20', '2024-06-25', 2, 100.00);
+
+-- Query to retrieve reservation details with customer information and room details
+SELECT r.Reservation_Number, c.First_Name, c.Last_Name, rt.Room_Type_Name, r.Booking_Type, r.From_Date, r.To_Date, r.Number_of_People, r.Rate
+FROM Reservation r
+JOIN Customer_Details c ON r.Customer_Number = c.Customer_Number
+JOIN Room_Type rt ON r.Room_Type_ID = rt.Room_Type_ID
+WHERE r.Reservation_Number = 1; -- Change the reservation number as per your requirement

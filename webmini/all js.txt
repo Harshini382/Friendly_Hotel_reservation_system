@@ -1,0 +1,119 @@
+about.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Simulate fetching number of occupied rooms and total rooms
+    setTimeout(function() {
+      const occupiedRooms = 50; // Replace with actual dynamic data fetching logic
+      const totalRooms = 100; // Replace with actual total number of rooms
+      const availableRooms = totalRooms - occupiedRooms;
+  
+      // Update displayed room numbers
+      document.getElementById('occupiedRooms').textContent = occupiedRooms;
+      document.getElementById('availableRooms').textContent = availableRooms;
+  
+      // Create occupancy visualization
+      const occupancyVisualization = document.getElementById('occupancyVisualization');
+      occupancyVisualization.innerHTML = ''; // Clear previous visualization
+  
+      for (let i = 0; i < totalRooms; i++) {
+        const circle = document.createElement('div');
+        circle.className = 'circle';
+        if (i >= occupiedRooms) {
+          circle.classList.add('unoccupied');
+        }
+        occupancyVisualization.appendChild(circle);
+      }
+  
+      // Image carousel animation
+      const images = document.querySelectorAll('.background-carousel img');
+      let currentImageIndex = 0;
+      
+      setInterval(() => {
+        // Hide current image
+        images[currentImageIndex].classList.remove('active');
+        
+        // Move to next image
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        
+        // Show next image
+        images[currentImageIndex].classList.add('active');
+      }, 4000); // Change image every 4 seconds (4000 milliseconds)
+    }, 1000); // Simulate delay for fetching data
+  });
+
+
+
+cont.js
+
+// JavaScript to show contact info on scroll
+window.addEventListener('scroll', function() {
+    var contactInfo = document.querySelector('.contact-info');
+    var position = contactInfo.getBoundingClientRect();
+  
+    // If the contact info section is in view
+    if (position.top < window.innerHeight && position.bottom >= 0) {
+      contactInfo.classList.add('show');
+    } else {
+      contactInfo.classList.remove('show');
+    }
+  });
+  
+
+cus.js
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('clearBtn').addEventListener('click', function() {
+      document.getElementById('registrationForm').reset();
+    });
+  });
+
+
+script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listeners to room elements
+    const rooms = document.querySelectorAll('.room');
+
+    rooms.forEach(room => {
+        const roomImg = room.querySelector('img');
+        const roomDetails = room.querySelector('.room-details');
+
+        // Show room details on hover
+        room.addEventListener('mouseover', function() {
+            roomImg.style.transform = 'scale(1.1)';
+            roomDetails.style.transform = 'translateY(0)';
+        });
+
+        // Hide room details on mouseout
+        room.addEventListener('mouseout', function() {
+            roomImg.style.transform = 'scale(1)';
+            roomDetails.style.transform = 'translateY(100%)';
+        });
+    });
+
+    // Add smooth scrolling effect to navigation links
+    const navLinks = document.querySelectorAll('.navbar-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if the link is targeting a section on the same page
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Handle opening about.html in a new tab
+    const aboutLink = document.querySelector('.navbar-links a[href="about.html"]');
+    
+    if (aboutLink) {
+        aboutLink.setAttribute('target', '_blank');
+    }
+});
+

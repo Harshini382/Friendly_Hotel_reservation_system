@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendly Hotel - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <h2>Friendly Hotel</h2>
+            </div>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" target="_blank">About</a>
+                <a href="contact.html" target="_blank">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="welcome-container">
+        <img src="hotel.jpg" alt="Hotel Image" class="background-image">
+        <div class="welcome-content">
+            <h1>Welcome to Friendly Hotel</h1>
+            <p class="slogan">Experience Comfort Like Never Before</p>
+            <button class="new-customer-button" onclick="redirectToRegistration()">New Customer</button>
+            <button class="existing-customer-button" onclick="navigateToPage()">Existing Customer</button>
+        </div>
+    </div>
+    <section class="rooms-section">
+        <div class="room" id="room1">
+            <img src="single.jpg" alt="Single Room">
+            <div class="room-details">
+                <p class="room-name">1. Single Room</p>
+                <p class="room-price">$100/night</p>
+            </div>
+        </div>
+        <div class="room" id="room2">
+            <img src="dulex.jpg" alt="Deluxe Room">
+            <div class="room-details">
+                <p class="room-name">2. Deluxe Room</p>
+                <p class="room-price">$200/night</p>
+            </div>
+        </div>
+        <div class="room" id="room3">
+            <img src="briadalsuite.jpeg" alt="Bridal Suite">
+            <div class="room-details">
+                <p class="room-name">3. Bridal Suite</p>
+                <p class="room-price">$300/night</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Friendly Hotel. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        <a href="about.html" onclick="return false;">About</a>
+    </script>
+    <script>
+        function redirectToRegistration() {
+          // Redirect to registration page
+          window.location.href = 'newcus.html';
+        }
+    
+        function navigateToPage() {
+          // Navigate to existing customer page
+          window.location.href = 'search.php';
+        }
+      </script>
+        <script>
+            <a href="contact.html" onclick="return false;">About</a>
+        </script>
+</body>
+</html>

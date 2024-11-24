@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Customer Registration</title>
+<link rel="stylesheet" href="cus.css">
+<style>
+  /* Additional inline styling for demonstration */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .glass {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="glass">
+    <h2>New Customer Registration</h2>
+    <form id="registrationForm" action="process.php" method="POST">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth (DD/MM/YYYY):</label>
+        <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY" required>
+      </div>
+      <div class="form-group">
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" name="address1" required>
+      </div>
+      <div class="form-group">
+        <label for="address2">Address Line 2:</label>
+        <input type="text" id="address2" name="address2">
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="pinCode">Pin code:</label>
+        <input type="text" id="pinCode" name="pinCode" maxlength="6" required>
+      </div>
+      <div class="form-group">
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" name="contactNumber" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="submitBtn">Submit</button>
+        <button type="button" id="clearBtn">Clear</button>
+        <a href="index.html" class="back-link">Back to Registration</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Optional: You can add JavaScript for client-side validation here
+</script>
+
+</body>
+</html>

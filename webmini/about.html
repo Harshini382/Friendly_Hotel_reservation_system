@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <div class="background-carousel">
+    <img src="image1.jpg" alt="Background 1" class="active">
+    <img src="image2.jpg" alt="Background 2">
+    <img src="image3.jpg" alt="Background 3">
+  </div>
+
+  <div class="content-wrapper">
+    <header>
+      <h1>About Us</h1>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="container glass">
+          <h1 style="color: Gold;">THE UNPARALLELED<br>GUARDIAN OF GRANDEUR</h1>
+          <p style="color: LemonChiffon;">Built on a vision of grandeur, Taj Hotels conjures a panoply of superlative experiences that are envisioned to indulge and forge unforgettable memories.</p>
+          <p></p>
+          <p style="color: lemonchiffon;">Currently, we have <span id="occupiedRooms">loading...</span> rooms occupied and <span id="availableRooms">loading...</span> rooms available.</p>
+        </div>
+      </section>
+
+      <section class="animation">
+        <div class="container glass">
+          <h2>Occupancy Visualized</h2>
+          <div class="occupancy-visualization" id="occupancyVisualization"></div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Example button -->
+    <button onclick="goToHomepage()">Go to Homepage</button>
+  </div>
+
+  <script src="about.js"></script>
+
+  <!-- JavaScript function to handle button click -->
+  <script>
+    function goToHomepage() {
+      window.location.href = "index.html"; // Replace with your homepage URL
+    }
+  </script>
+</body>
+</html>

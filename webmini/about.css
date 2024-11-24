@@ -1,0 +1,104 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    background: white;
+  }
+  
+  /* Background carousel */
+  .background-carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .background-carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .background-carousel img.active {
+    opacity: 1;
+  }
+  
+  /* Content wrapper with glassmorphism effect */
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: black;
+  }
+  
+  .intro p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Custom occupancy visualization */
+  .occupancy-visualization {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .circle.unoccupied {
+    background-color: #FF0000;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

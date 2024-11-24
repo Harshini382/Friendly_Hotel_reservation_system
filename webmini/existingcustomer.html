@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Existing Customer Search</title>
+    <link rel="stylesheet" href="exi.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Existing Customer - Search screen</h2>
+        <form id="searchForm">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+            
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber">
+            
+            <button type="submit">Search</button>
+        </form>
+        <button onclick="goBack()">Back</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script src="exi.js"></script>
+</body>
+</html>
