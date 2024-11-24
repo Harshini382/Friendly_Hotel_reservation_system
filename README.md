@@ -30,12 +30,6 @@ In your browser, go to:
 
 http://localhost/webmini **(replace “webmini” with your folder name). 🌟**
 
-SAVE ALL THIS FILE IN XAMPP FOLDER PRESENT IN C:
-
-INSIDE XAMPP YOU'LL FIND htdocs 
-
-INSIDE htdocs CREATE A FOLDER AND SAVE THIS ALL
-
 **Pages You'll Find**
 Home 🏠
 About Us 📖
