@@ -31,9 +31,6 @@ In your browser, go to:
 http://localhost/webmini **(replace “webmini” with your folder name). 🌟**
 
 
-https://github.com/user-attachments/assets/79d10b9f-62d0-4336-9255-1ea30a37d9b3
-
-
 **Pages You'll Find**
 Home 🏠
 About Us 📖
@@ -44,10 +41,10 @@ Reservation 📅
 Confirmation ✔️
 
 
-**You're all set! Enjoy exploring the site! 🎉**
-
-
 https://github.com/user-attachments/assets/be0454ae-7bf3-4b8f-92c6-a2a9f29e71fd
+
+
+**You're all set! Enjoy exploring the site! 🎉**
 
 
 
